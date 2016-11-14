@@ -1,0 +1,141 @@
+﻿<%@ Master Language="VB" CodeFile="MasterPage.master.vb" Inherits="MasterPage" %>
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head runat ="server" >
+<title>Five Star Hotel</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="style.css" rel="stylesheet" type="text/css" />
+<link href="layout.css" rel="stylesheet" type="text/css" />
+<script src="" type="text/javascript"></script><%--maxheight.js--%>
+<!--[if lt IE 7]>
+<link href="ie_style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="ie_png.js"></script>
+<script type="text/javascript">ie_png.fix('.png, #header .row-2, #header .nav li a, #content, .gallery li');</script>
+<![endif]-->
+    <style type="text/css">
+        .style1
+        {
+            font-size: smaller;
+        }
+        </style>
+    </head>
+<body id="page1" onload="new ElementMaxHeight();">
+    <form id="form1" runat="server" style="background:white">
+<div id="main" style="background:white">
+  <!-- header -->
+  <div id="header" style="background:Red">
+    <div class="row-1" style="background:white">
+      <div class="wrapper"  style="background:white">
+        <div class="logo" style="background:white">
+          <h1>
+              <asp:ImageButton ID="ImageButton1" runat="server" Height="60px" 
+                  ImageUrl="~/images/logo.jpg" PostBackUrl="~/Home.aspx" Width="50px" 
+                  ToolTip="Home" />
+              <a href="#" class="style1">AaMANTRAN HOTEL</a></h1>
+          <em></em> <strong></strong> </div>
+         <div class="phones" align="right"> 
+  
+            <asp:LoginView ID="LoginView1" runat="server">
+                <AnonymousTemplate>
+                    Welcome
+                    <asp:Label ID="Label1" runat="server" Text="Visitor   "></asp:Label>
+                    <br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:LoginStatus ID="LoginStatus7" runat="server" />
+                    &nbsp;&nbsp;&nbsp;<asp:LinkButton ID="LinkButton1" 
+                        runat="server" PostBackUrl="~/Register.aspx">Register</asp:LinkButton>
+                </AnonymousTemplate>
+                <LoggedInTemplate>
+                    Welcome
+                    <asp:LoginName ID="LoginName2" runat="server" />
+                    <br />
+                    <asp:LoginStatus ID="LoginStatus6" runat="server" />
+                    &nbsp;&nbsp;
+             <asp:LinkButton ID="LinkButton3" runat="server" PostBackUrl="~/Profile.aspx">Profile</asp:LinkButton>
+                    <br />&nbsp;<asp:LinkButton ID="LinkButton5" runat="server" Font-Size="12pt" 
+                        ForeColor="Black" PostBackUrl="~/ChangePassword.aspx">Change Password</asp:LinkButton>
+                    <br />
+                    &nbsp;&nbsp;
+                    <br/>
+                </LoggedInTemplate>
+              
+             
+                <RoleGroups>
+                    <asp:RoleGroup Roles="Admin">
+                        <ContentTemplate>
+                            Welcome
+                            <asp:LoginName ID="LoginName3" runat="server" />
+                            &nbsp;<br />
+                            <asp:LoginStatus ID="LoginStatus8" runat="server" />
+                            &nbsp;<asp:LinkButton ID="LinkButton4" runat="server" CssClass="style2" 
+                                PostBackUrl="~/Admin/Location.aspx">Admin Tools</asp:LinkButton>
+                            <br />
+                            <asp:LinkButton ID="LinkButton5" runat="server" Font-Size="12pt" 
+                                ForeColor="Black" PostBackUrl="~/ChangePassword.aspx">Change Password</asp:LinkButton>
+                            <br />
+                           
+                            <br />
+                        </ContentTemplate>
+                    </asp:RoleGroup>
+                </RoleGroups>
+            </asp:LoginView>
+          </div>
+      </div>
+    </div>
+    <div class="row-2">
+      <div class="indent">
+        <!-- header-box begin -->
+          <div class="header-box">
+              <div class="inner">
+                  <ul class="nav">
+                      <li><a href="Home.aspx">Home</a></li>
+                      <li><a href="services.aspx">Services</a></li>
+                      <li><a href="gallery.aspx">Gallery</a></li>
+                      <li><a href="restaurant.aspx">Restaurant</a></li>
+                      <li><a href="testimonials.aspx">Testimonials</a></li>
+                      <li><a href="booking.aspx">Booking</a></li>
+                  </ul>
+              </div>
+          </div>
+        <!-- header-box end -->
+      </div>
+    </div>
+  </div>
+  <!-- content -->
+  <div id="content" style="vertical-align: top">
+      <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+
+
+        
+
+
+          <p>
+              &nbsp;</p>
+          <p>
+              <br />
+          </p>
+          <p>
+          </p>
+
+
+        
+
+
+      </asp:ContentPlaceHolder>
+  </div>
+  <!-- footer -->
+  <div id="footer" style="background:Black">
+    <ul class="nav">
+      <li><a href="Home.aspx">Home</a>|</li>
+      <li><a href="services.aspx">Services</a>|</li>
+      <li><a href="gallery.aspx">Gallery</a>|</li>
+      <li><a href="restaurant.aspx">Restaurant</a>|</li>
+      <li><a href="testimonials.aspx">Testimonials</a>|</li>
+      <li><a href="booking.aspx">Booking</a></li>
+     </ul>
+  </div>
+ </div>
+    </form>
+</body>
+</html>

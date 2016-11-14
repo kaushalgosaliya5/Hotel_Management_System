@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Advertisements>
+  <ad>
+    <ImageUrl>~/AM_Images/1.jpg</ImageUrl>
+    <AlternateText>Abc</AlternateText>
+  </ad>
+  <ad>
+    <ImageUrl>~/AM_Images/1.jpg</ImageUrl>
+    <AlternateText>Abc</AlternateText>
+  </ad>
+  <ad>
+    <ImageUrl>~/AM_Images/1.jpg</ImageUrl>
+    <AlternateText>Abc</AlternateText>
+  </ad>
+
+
+</Advertisements>

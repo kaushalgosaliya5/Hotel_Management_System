@@ -1,0 +1,240 @@
+﻿<%@ Master Language="VB" CodeFile="MasterPage.master.vb" Inherits="MasterPage" %>
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head runat="server">
+<title>Five Star Hotel</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="style.css" rel="stylesheet" type="text/css" />
+<link href="layout.css" rel="stylesheet" type="text/css" />
+<script src="" type="text/javascript"></script><%--maxheight.js--%>
+<!--[if lt IE 7]>
+<link href="ie_style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="ie_png.js"></script>
+<script type="text/javascript">ie_png.fix('.png, #header .row-2, #header .nav li a, #content, .gallery li');</script>
+<![endif]-->
+    <style type="text/css">
+        .style1
+        {
+            font-size: smaller;
+        }
+        .heading2
+{height:28px; line-height:30px; font-size:18px;  color:Green;  padding-left:20px; font-weight:bold; border-bottom:2px solid #8c8c8c; font-family:tahoma; border-top:1px solid #ffffff;}
+
+.catlinks
+{height:28px; line-height:28px; font-weight:bold; border-bottom:1px solid #8c8c8c; font-family:tahoma; font-size:11px;}
+   
+        .style4
+        {
+          
+            padding-left: 20px;
+            font-size: 22px;
+            color: #ffffff;
+            background-color: #44bde6;
+            height: 10%;
+         }
+        .style6
+        {
+            height: 28px;
+            line-height: 30px;
+            font-size: 18px;
+            color: Green;
+            padding-left: 20px;
+            font-weight: bold;
+            border-bottom: 2px solid #8c8c8c;
+            font-family: tahoma;
+            border-top: 1px solid #ffffff;
+            text-align: center;
+        }
+        .style7
+        {
+            height: 28px;
+            line-height: 28px;
+            font-weight: bold;
+            border-bottom: 1px solid #8c8c8c;
+            font-family: tahoma;
+            font-size: 15px;
+            text-align: center;
+        }
+        </style>
+    </head>
+<body id="page1" onload="new ElementMaxHeight();">
+    <form id="form1" runat="server" style="background:white">
+<div id="main" style="background:white">
+  <!-- header -->
+  <div id="header" style="background:Red">
+    <div class="row-1" style="background:white">
+      <div class="wrapper"  style="background:white">
+        <div class="logo" style="background:white">
+          <h1><a href="#" class="style1">AAMANTRAN HOTEL</a></h1>
+          <em>Hotel</em> <strong>True Luxury</strong> </div>
+         <div class="phones" align="right"> 
+          
+            <asp:LoginView ID="LoginView1" runat="server">
+                <AnonymousTemplate>
+                    Welcome
+                    <asp:Label ID="Label1" runat="server" Text="Anonymous"></asp:Label>
+                    <br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:LoginStatus ID="LoginStatus7" runat="server" 
+                        Font-Size="20pt" />
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:LinkButton ID="LinkButton1" 
+                        runat="server" PostBackUrl="~/Register.aspx" Font-Size="20pt">Register</asp:LinkButton>
+                </AnonymousTemplate>
+                <LoggedInTemplate>
+                    Welcome
+                    <asp:LoginName ID="LoginName2" runat="server" />
+                    <br />
+                    <asp:LoginStatus ID="LoginStatus6" runat="server" />
+                    &nbsp;&nbsp;
+             <asp:LinkButton ID="LinkButton3" runat="server" PostBackUrl="~/Profile.aspx">Profile</asp:LinkButton>
+                    <br />&nbsp;&nbsp;
+                </LoggedInTemplate>
+              
+             
+                <RoleGroups>
+                    <asp:RoleGroup Roles="Admin">
+                        <ContentTemplate>
+                            Welcome
+                            <asp:LoginName ID="LoginName3" runat="server" />
+                            &nbsp;<br />
+                            &nbsp;<asp:LoginStatus ID="LoginStatus8" runat="server" />
+                            &nbsp;<asp:LinkButton ID="LinkButton4" runat="server" CssClass="style2" 
+                                onclick="LinkButton4_Click" PostBackUrl="~/Home.aspx">HOME</asp:LinkButton>
+                            <br />
+                            <br />
+                            &nbsp;
+                        </ContentTemplate>
+                    </asp:RoleGroup>
+                </RoleGroups>
+            </asp:LoginView>
+          </div>
+      </div>
+    </div>
+    <div class="row-2">
+      <div class="indent">
+        <!-- header-box begin -->
+          <div class="header-box">
+              <div class="inner">
+                  <ul class="nav">
+                      <li><a href="~/Home.aspx">Home page</a></li>
+                      <li><a href="~/services.aspx">Services</a></li>
+                      <li><a href="~/gallery.aspx">Gallery</a></li>
+                      <li><a href="~/restaurant.aspx">Restaurant</a></li>
+                      <li><a href="~/testimonials.aspx">Testimonials</a></li>
+                      <li><a href="~/booking.aspx">Booking</a></li>
+                  </ul>
+              </div>
+          </div>
+        <!-- header-box end -->
+      </div>
+    </div>
+  </div>
+  &nbsp;<br />
+&nbsp;<table border="0" cellpadding="0" cellspacing="0" width="100%">
+        <tr>
+            <td bgcolor="#eeeeee" valign="top" width="250">
+                <table align="center" border="0" cellpadding="0" cellspacing="0" width="90%">
+                    <tr>
+                        <td class="style6">
+                            Maintain master</td>
+                    </tr>
+                    <tr>
+                        <td class="style7">
+                            <a href="Location.aspx">Location</a></td>
+                    </tr>
+                    <tr>
+                        <td class="style7">
+                            <a href="Food.aspx">Food</a></td>
+                    </tr>
+                    <tr>
+                        <td class="style7">
+                            <a href="Room.aspx">Room</a></td>
+                    </tr>
+                    <tr>
+                        <td class="style7">
+                            <a href="Service.aspx">Service</a></td>
+                    </tr>
+                    <tr>
+                        <td class="style7">
+                            <a href="Booking_Detail.aspx">Booking Detail</a></td>
+                    </tr>
+                     <tr>
+                        <td class="style7">
+                            <a href="FoodOrder.aspx">Food Order</a></td>
+                    </tr>
+                    <tr>
+                        <td class="style7">
+                            <a href="Gallery.aspx">Gallery</a></td>
+                    </tr>
+                    <tr>
+                        <td class="style7">
+                            <a href="Reports.aspx">Reports</a></td>
+                    </tr>
+                   
+        <!--</table>
+          
+          
+          
+          <table width="100%" border="0" cellspacing="0" cellpadding="0">-->
+                    
+                    <tr>
+                       
+              <!--<marquee direction="up"  behavior="alternate"><table width="90%" border="0" align="center" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td><table border="0" cellspacing="0" cellpadding="0" class="date">
+                        <tr>
+                          <td class="heading3"></td>
+                        </tr>
+                    </table></td>
+                  </tr>
+                  <tr>
+                    <td class="smal-txt">
+                        
+                    </td>
+                  </tr>
+                <!--  <tr>
+                    <td height="25" align="right" class="more"><a href="#">Learn More</a></td>
+                  </tr>
+              </table>-->
+                    </tr>
+                </table>
+            </td>
+            <td valign="top">
+                <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                    <tr>
+                        <td scope="col" valign="top">
+                            <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                                <tr>
+                                    <td class="style1" valign="top">
+                                        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+    
+
+  
+ 
+                                        </asp:ContentPlaceHolder>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+&nbsp;<br />
+&nbsp;<!-- content --><!-- footer --><div id="footer" style="background:Black">
+    <ul class="nav">
+     
+      <li><a href="~/Home.aspx">Home</a></li>
+                      <li><a href="~/services.aspx">Services</a></li>
+                      
+                      <li><a href="~/restaurant.aspx">Restaurant</a></li>
+                      <li><a href="~/testimonials.aspx">Testimonials</a></li>
+                      <li><a href="~/booking.aspx">Booking</a></li>
+    </ul>
+  </div>
+ </div>
+    </form>
+</body>
+</html>
